@@ -303,7 +303,7 @@ applet_start() {
                     'binds-config [文件]' '以每行一个的方式列明应被绑定挂载的路径的纯文本配置文件，每行定义与--bind一致。默认：~/.config/wechat-universal/binds.list；环境变量：WECHAT_CUSTOM_BINDS_CONFIG' \
                     'ime [输入法名称或特殊值]' '应用输入法对应环境变量修改，可支持：fcitx (不论是否为5), ibus，特殊值：none不应用，auto自动判断。默认: auto；环境变量: WECHAT_IME_WORKAROUND'\
                     'no-callout        ' '不要试图呼出已经在运行的微信实例，启用--multiple选项时此项目自动启用。默认: 不设置；环境变量: WECHAT_NO_CALLOUT'\
-                    'multiple          ' '在微信已在运行的情况下进行多开。默认: 不设置；环境变量: MULTIPLE_INSTANCE;'\
+                    'multiple [可选实例名称]' '在微信已在运行的情况下进行多开,实例名称不指定时无法保持自动登陆状态和客户端设置,聊天记录和文件不影响。特殊值: auto,等效于不指定配置名称; 默认: 不设置；环境变量: MULTIPLE_INSTANCE;'\
                     'help' ''
                 echo
                 echo "命令行参数比环境变量优先级更高，如果命令行参数与环境变量皆为空，则使用默认值"
@@ -316,7 +316,7 @@ applet_start() {
                     'binds-config [file]' 'Path to text file that contains one --bind value per line, default: ~/.config/wechat-universal/binds.list, as environment: WECHAT_CUSTOM_BINDS_CONFIG'\
                     'ime [input method]' 'Apply IME-specific workaround, support: fcitx (also for 5), ibus, default: auto, as environment: WECHAT_IME_WORKAROUND'\
                     'no-callout        ' 'do not try to call out an already running WeChat instance, this is automatically enabled when the --multiple option is enabled. default: not set, as environment: WECHAT_NO_CALLOUT'\
-                    'multiple          ' 'Perform multiple instance opening when WeChat is already running. default: not set, as environment: MULTIPLE_INSTANCE'\
+                    'multiple [optional name]' 'Perform multiple instance when WeChat is already running.The auto login status and client settings cannot be retained when instance name is empty, chat history and files are not affected.Special value: auto, equivalent to without a instance name; default: not set, as environment: MULTIPLE_INSTANCE'\
                     'help' ''
                 echo
                 echo "Arguments take priority over environment, if both argument and environment are empty, the default value would be used"
